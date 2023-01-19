@@ -11,7 +11,7 @@ class AuthService {
         return ApiRequest.post(ApiRequest.LOGIN_URL, Gson().toJson(user))
     }
 
-    fun user(user: User): ApiResponse
+    fun register(user: User): ApiResponse
     {
         return ApiRequest.post(ApiRequest.USER_URL, Gson().toJson(user))
     }
