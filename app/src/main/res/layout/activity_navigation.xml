@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".NavigationActivity">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/imglogo"
+        android:layout_width="match_parent"
+        app:cardElevation="15sp"
+        android:layout_height="70sp">
+
+        <ImageView
+            android:id="@id/imglogo"
+            android:layout_width="220sp"
+            android:layout_height="match_parent"
+            android:src="@drawable/logo"
+            tools:ignore="ContentDescription">
+        </ImageView>
+
+        <ImageView
+            android:id="@+id/icPerson"
+            android:layout_width="33sp"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:layout_marginTop="18sp"
+            android:layout_marginEnd="25sp"
+            android:src="@drawable/ic_person"
+            tools:ignore="ContentDescription,ImageContrastCheck"></ImageView>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmemtContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/imglogo"
+        android:layout_above="@id/bnNavigation"
+        tools:layout="@layout/fragment_home">
+
+    </androidx.fragment.app.FragmentContainerView>
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bnNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/bottom_nav_menu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:itemRippleColor="@color/light_orange"
+        tools:layout_editor_absoluteX="42dp">
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+</RelativeLayout>

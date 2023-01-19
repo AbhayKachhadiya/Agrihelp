@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/orange_500"
+    tools:context=".LoginActivity">
+
+    <TextView
+        android:id="@+id/lblLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="25dp"
+        android:text="@string/login"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        tools:ignore="TextContrastCheck" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="360sp"
+        android:layout_height="480sp"
+        android:layout_centerInParent="true"
+        android:backgroundTint="#FFFFFF"
+        app:cardCornerRadius="12sp"
+        app:cardElevation="15sp">
+
+        <ImageView
+            android:layout_width="280sp"
+            android:layout_height="80sp"
+            android:layout_marginStart="40sp"
+            android:layout_marginTop="4sp"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/logo" />
+
+        <EditText
+            android:id="@+id/txtEmailAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="25sp"
+            android:layout_marginTop="120sp"
+            android:autofillHints=""
+            android:backgroundTint="@color/orange_500"
+            android:drawableEnd="@drawable/ic_mail"
+            android:hint="@string/email_address"
+            android:inputType="textEmailAddress"
+            android:minHeight="48dp"
+            android:textColorHint="@color/orange_500"
+            tools:ignore="TextContrastCheck" />
+
+        <EditText
+            android:id="@+id/txtPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="25sp"
+            android:layout_marginTop="200sp"
+            android:autofillHints=""
+            android:backgroundTint="#FF9800"
+            android:drawableEnd="@drawable/ic_visibility_off"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:minHeight="48dp"
+            android:textColorHint="@color/orange_500"
+            tools:ignore="TextContrastCheck" />
+
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="210sp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="75sp"
+            android:layout_marginTop="290sp"
+            android:backgroundTint="@color/green_500"
+            android:text="@string/login"
+            android:textColor="#ffffff"
+            android:textSize="19sp"
+            tools:ignore="TextContrastCheck,DuplicateSpeakableTextCheck" />
+
+
+        <TextView
+            android:id="@+id/lblQuestion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48sp"
+            android:layout_marginTop="390sp"
+            android:text="@string/do_not_have_an_account"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/lblRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="255sp"
+            android:layout_marginTop="390sp"
+            android:text="@string/register"
+            android:textColor="@color/orange_500"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:ignore="TextContrastCheck" />
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>

@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:scrollbars="none">
+
+    <LinearLayout
+        android:id="@+id/adCards"
+        android:layout_width="match_parent"
+        android:layout_height="200sp"
+        android:orientation="vertical"
+        tools:context=".HomeFragment">
+
+        <!-- TODO: Update blank fragment layout -->
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="240sp"
+            android:scrollbars="none"
+            tools:ignore="SpeakableTextPresentCheck">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/orange_500">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/crdHarvesterAd"
+                    android:layout_width="300sp"
+                    android:layout_height="180sp"
+                    android:layout_marginHorizontal="19sp"
+                    android:layout_marginVertical="35sp"
+                    app:cardCornerRadius="15sp"
+                    app:cardElevation="15sp">
+
+                    <ImageView
+                        android:id="@+id/imdHarvesterAd"
+                        android:layout_width="300sp"
+                        android:layout_height="180sp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/harvester_ad"
+                        tools:ignore="ContentDescription">
+
+                    </ImageView>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/crdTractorAd"
+                    android:layout_width="300sp"
+                    android:layout_height="180sp"
+                    android:layout_marginHorizontal="10sp"
+                    android:layout_marginVertical="35sp"
+                    app:cardCornerRadius="15sp"
+                    app:cardElevation="15sp">
+
+                    <ImageView
+                        android:id="@+id/imgTractor"
+                        android:layout_width="300sp"
+                        android:layout_height="180sp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/tractor_ad"
+                        tools:ignore="ContentDescription">
+
+                    </ImageView>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/crdDroneSprayerAd"
+                    android:layout_width="300sp"
+                    android:layout_height="180sp"
+                    android:layout_marginHorizontal="20sp"
+                    android:layout_marginVertical="35sp"
+                    app:cardCornerRadius="15sp"
+                    app:cardElevation="15sp">
+
+                    <ImageView
+                        android:id="@+id/imgDroneSprayerAd"
+                        android:layout_width="300sp"
+                        android:layout_height="180sp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/drone_sprayer_ad"
+                        tools:ignore="ContentDescription">
+
+                    </ImageView>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/crdThresherAd"
+                    android:layout_width="300sp"
+                    android:layout_height="180sp"
+                    android:layout_marginHorizontal="15sp"
+                    android:layout_marginVertical="35sp"
+                    app:cardCornerRadius="15sp"
+                    app:cardElevation="15sp">
+
+                    <ImageView
+                        android:id="@+id/imgThresherAd"
+                        android:layout_width="310sp"
+                        android:layout_height="190sp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/thresher_ad"
+                        tools:ignore="ContentDescription">
+
+                    </ImageView>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/crdServices"
+            android:layout_width="413sp"
+            android:layout_height="1020sp"
+            android:backgroundTint="@color/orange_500">
+
+            <TextView
+                android:id="@+id/txtServices"
+                android:layout_width="130sp"
+                android:layout_height="50sp"
+                android:layout_marginHorizontal="23sp"
+                android:layout_marginVertical="25sp"
+                android:text="@string/services"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                tools:ignore="TextContrastCheck,TextContrastCheck" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/crdDroneSprayer"
+                android:layout_width="350sp"
+                android:layout_height="270sp"
+                android:layout_marginHorizontal="23sp"
+                android:layout_marginVertical="90sp"
+                android:background="@color/white"
+                app:cardCornerRadius="15sp"
+                app:cardElevation="15sp">
+
+                <ImageView
+                    android:id="@+id/imgDroneSprayer"
+                    android:layout_width="370sp"
+                    android:layout_height="150dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/drone_sprayer"
+                    tools:ignore="ContentDescription,ImageContrastCheck,ImageContrastCheck" />
+
+                <TextView
+                    android:id="@+id/txtDroneSprayer"
+                    android:layout_width="130sp"
+                    android:layout_height="30sp"
+                    android:layout_marginHorizontal="10sp"
+                    android:layout_marginVertical="160sp"
+                    android:gravity="center"
+                    android:text="@string/drone_sprayer"
+                    android:textColor="@color/orange_500"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    tools:ignore="TextContrastCheck,TextContrastCheck" />
+
+                <TextView
+                    android:id="@+id/detailsDroneSprayer"
+                    android:layout_width="190sp"
+                    android:layout_height="50sp"
+                    android:layout_marginHorizontal="10sp"
+                    android:layout_marginVertical="205sp"
+                    android:gravity="start"
+                    android:text="@string/ds_detail"
+                    android:textColor="@color/orange_500"
+                    android:textSize="16sp"
+                    tools:ignore="TextContrastCheck" />
+
+                <TextView
+                    android:id="@+id/priceDroneSprayer"
+                    android:layout_width="130sp"
+                    android:layout_height="50sp"
+                    android:layout_gravity="end"
+                    android:layout_marginHorizontal="1sp"
+                    android:layout_marginVertical="160sp"
+                    android:gravity="start"
+                    android:text="@string/ds_price"
+                    android:textColor="@color/orange_500"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    tools:ignore="TextContrastCheck,TextContrastCheck" />
+
+                <Button
+                    android:id="@+id/btnBookNowDroneSprayer"
+                    android:layout_width="110sp"
+                    android:layout_height="40sp"
+                    android:layout_gravity="end"
+                    android:layout_marginHorizontal="10sp"
+                    android:layout_marginVertical="220sp"
+                    android:backgroundTint="@color/green_500"
+                    android:gravity="center"
+                    android:text="@string/book_now"
+                    android:textSize="12sp"
+                    tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TextContrastCheck,TextContrastCheck,DuplicateSpeakableTextCheck,DuplicateSpeakableTextCheck" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/crdHarvester"
+                android:layout_width="350sp"
+                android:layout_height="270sp"
+                android:layout_marginHorizontal="23sp"
+                android:layout_marginVertical="400sp"
+                android:background="@color/white"
+                app:cardCornerRadius="15sp"
+                app:cardElevation="15sp">
+
+                <ImageView
+                    android:id="@+id/imgHarvester"
+                    android:layout_width="370sp"
+                    android:layout_height="150dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/harvester"
+                    tools:ignore="ContentDescription,ImageContrastCheck,ImageContrastCheck" />
+
+                <TextView
+                    android:id="@+id/txtHarvester"
+                    android:layout_width="130sp"
+                    android:layout_height="30sp"
+                    android:layout_marginHorizontal="10sp"
+                    android:layout_marginVertical="160sp"
+                    android:gravity="start"
+                    android:text="@string/harvester"
+                    android:textColor="@color/orange_500"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    tools:ignore="TextContrastCheck,TextContrastCheck" />
+
+                <TextView
+                    android:id="@+id/detailsHarvester"
+                    android:layout_width="190sp"
+                    android:layout_height="60sp"
+                    android:layout_marginHorizontal="10sp"
+                    android:layout_marginVertical="200sp"
+                    android:gravity="start"
+                    android:text="@string/harvester_detail"
+                    android:textColor="@color/orange_500"
+                    android:textSize="16sp"
+                    tools:ignore="TextContrastCheck,TextContrastCheck" />
+
+                <TextView
+                    android:id="@+id/priceHarvester"
+                    android:layout_width="120sp"
+                    android:layout_height="50sp"
+                    android:layout_gravity="end"
+                    android:layout_marginHorizontal="1sp"
+                    android:layout_marginVertical="160sp"
+                    android:gravity="start"
+                    android:text="@string/harvester_price"
+                    android:textColor="@color/orange_500"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    tools:ignore="TextContrastCheck,TextContrastCheck" />
+
+                <Button
+                    android:id="@+id/btnBookNowHarvester"
+                    android:layout_width="110sp"
+                    android:layout_height="40sp"
+                    android:layout_gravity="end"
+                    android:layout_marginHorizontal="10sp"
+                    android:layout_marginVertical="220sp"
+                    android:backgroundTint="@color/green_500"
+                    android:gravity="center"
+                    android:text="@string/book_now"
+                    android:textSize="12sp"
+                    tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck,TextContrastCheck,TextContrastCheck" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/crdThresher"
+                android:layout_width="350sp"
+                android:layout_height="270sp"
+                android:layout_marginHorizontal="23sp"
+                android:layout_marginVertical="710sp"
+                android:background="@color/white"
+                app:cardCornerRadius="15sp"
+                app:cardElevation="15sp">
+
+                <ImageView
+                    android:id="@+id/imgThresher"
+                    android:layout_width="370sp"
+                    android:layout_height="150dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/thresh"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/txtThresher"
+                    android:layout_width="130sp"
+                    android:layout_height="30sp"
+                    android:layout_marginHorizontal="10sp"
+                    android:layout_marginVertical="160sp"
+                    android:gravity="start"
+                    android:text="@string/thresher"
+                    android:textColor="@color/orange_500"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/detailsThresher"
+                    android:layout_width="190sp"
+                    android:layout_height="60sp"
+                    android:layout_marginHorizontal="10sp"
+                    android:layout_marginVertical="200sp"
+                    android:gravity="start"
+                    android:text="@string/thresher_detail"
+                    android:textColor="@color/orange_500"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/priceThresher"
+                    android:layout_width="120sp"
+                    android:layout_height="50sp"
+                    android:layout_gravity="end"
+                    android:layout_marginHorizontal="1sp"
+                    android:layout_marginVertical="160sp"
+                    android:gravity="start"
+                    android:text="@string/thresher_price"
+                    android:textColor="@color/orange_500"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btnBookNowThresher"
+                    android:layout_width="110sp"
+                    android:layout_height="40sp"
+                    android:layout_gravity="end"
+                    android:layout_marginHorizontal="10sp"
+                    android:layout_marginVertical="220sp"
+                    android:backgroundTint="@color/green_500"
+                    android:gravity="center"
+                    android:text="@string/book_now"
+                    android:textSize="12sp" />
+
+            </androidx.cardview.widget.CardView>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+</ScrollView>
