@@ -62,7 +62,7 @@
                         android:layout_width="300sp"
                         android:layout_height="180sp"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/tractor_ad"
+                        android:src="@drawable/thresher1"
                         tools:ignore="ContentDescription">
 
                     </ImageView>

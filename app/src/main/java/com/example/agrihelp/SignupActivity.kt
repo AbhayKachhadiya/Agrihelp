@@ -2,7 +2,6 @@ package com.example.agrihelp
 
 import android.content.Intent
 import android.os.Bundle
-import android.os.Looper
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -64,20 +63,20 @@ class SignupActivity : AppCompatActivity() {
 
             val Response = authService.register(user)
             if (Response.code == HttpURLConnection.HTTP_CONFLICT) {
-                Looper.prepare()
+                CoroutineScope(Dispatchers.Main).launch {
                 Toast.makeText(this@SignupActivity,"User already exist!",Toast.LENGTH_LONG).show()
-                Looper.loop()
-                goToLogin()
+                startActivity(Intent(this@SignupActivity,LoginActivity::class.java))
+                }
             }
             else if (Response.code == HttpURLConnection.HTTP_CREATED) {
-                Looper.prepare()
-                Toast.makeText(
-                    this@SignupActivity,
-                    "User registered successfully!",
-                    Toast.LENGTH_LONG
-                ).show()
-                Looper.loop()
-                goToLogin()
+                CoroutineScope(Dispatchers.Main).launch {
+                    Toast.makeText(
+                        this@SignupActivity,
+                        "User registered successfully!",
+                        Toast.LENGTH_LONG
+                    ).show()
+                startActivity(Intent(this@SignupActivity,LoginActivity::class.java))
+                }
             }
         }
     }

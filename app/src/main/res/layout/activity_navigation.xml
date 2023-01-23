@@ -29,7 +29,8 @@
             android:layout_marginTop="18sp"
             android:layout_marginEnd="25sp"
             android:src="@drawable/ic_logout"
-            tools:ignore="ContentDescription,ImageContrastCheck"></ImageView>
+            tools:ignore="ContentDescription,ImageContrastCheck">
+        </ImageView>
 
     </androidx.cardview.widget.CardView>
 
