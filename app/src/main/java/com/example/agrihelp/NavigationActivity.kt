@@ -13,6 +13,7 @@ class NavigationActivity : AppCompatActivity() {
     private lateinit var bottomNavView: BottomNavigationView
     private lateinit var homeFragment: HomeFragment
     private lateinit var contactUsFragment: ContactUsFragment
+    private lateinit var bookingFragment: BookingFragment
     private lateinit var sharedPref: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,6 +25,7 @@ class NavigationActivity : AppCompatActivity() {
 
         homeFragment = HomeFragment()
         contactUsFragment = ContactUsFragment()
+        bookingFragment = BookingFragment()
 
         showHomeFragment()
 
@@ -48,6 +50,7 @@ private fun bottomNavItemSelected(item: MenuItem): Boolean {
     when (item.itemId) {
         R.id.navHome -> showHomeFragment()
         R.id.navContactUs -> showContactUsFragment()
+        R.id.navBooking -> showBookingFragment()
         else -> return false
     }
     return true
@@ -65,5 +68,11 @@ private fun showContactUsFragment() {
         replace(R.id.fragmemtContainer, contactUsFragment)
         commit()
     }
+}
+private fun showBookingFragment() {
+        supportFragmentManager.beginTransaction().apply {
+            replace(R.id.fragmemtContainer, bookingFragment)
+            commit()
+        }
 }
 }
