@@ -26,6 +26,9 @@
     <string name="full_name">Enter Full Name</string>
     <string name="write_your_query">Write your query</string>
     <string name="submit">Submit</string>
+    <string name="booking_form">Booking Form</string>
+    <string name="pincode">Enter Pincode</string>
+    <string name="crop_name">Enter Crop Name</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -39,5 +42,6 @@
     <string name="mail">agrihelp@gmail.com</string>
     <string name="tall_free_number"> +91 9408482488</string>
     <string name="any_questions">You have any questions or need additional information ?</string>
+
 
 </resources>
