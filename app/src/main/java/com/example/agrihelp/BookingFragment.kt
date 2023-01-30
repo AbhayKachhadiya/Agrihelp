@@ -1,19 +1,27 @@
 package com.example.agrihelp
 
+import android.app.DatePickerDialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
+import android.widget.AutoCompleteTextView
+import android.widget.EditText
 import androidx.fragment.app.Fragment
 import com.denzcoskun.imageslider.ImageSlider
 import com.denzcoskun.imageslider.models.SlideModel
+import java.util.*
+import kotlin.collections.ArrayList
 
 
+@Suppress("NAME_SHADOWING")
 class BookingFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_booking, container, false)
     }
 
+    private lateinit var dateEdt: EditText
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -25,5 +33,48 @@ class BookingFragment : Fragment() {
 
         val imageSlider = view.findViewById<ImageSlider>(R.id.image_slider)
         imageSlider.setImageList(imageList)
+
+        showDatePicker()
+        showDropDown()
+
+    }
+
+    private fun showDatePicker(){
+        dateEdt =  requireView().findViewById(R.id.idEdtDate)
+
+        dateEdt.setOnClickListener {
+
+            val c = Calendar.getInstance()
+
+            val year = c.get(Calendar.YEAR)
+            val month = c.get(Calendar.MONTH)
+            val day = c.get(Calendar.DAY_OF_MONTH)
+
+            val datePickerDialog = DatePickerDialog(
+                requireContext(),
+                { _, _, monthOfYear, dayOfMonth ->
+
+                    val dat = (dayOfMonth.toString() + "-" + (monthOfYear + 1) + "-" + year)
+                    dateEdt.setText(dat)
+                },
+
+                year,
+                month,
+                day
+            )
+
+            datePickerDialog.show()
+        }
+    }
+
+    private fun showDropDown(){
+
+        val services = resources.getStringArray(R.array.services)
+
+        val arrayAdapter = ArrayAdapter(requireContext(), R.layout.dropdown_item, services)
+
+        val autocompleteTV = requireView().findViewById<AutoCompleteTextView>(R.id.autoCompleteTextView)
+
+        autocompleteTV.setAdapter(arrayAdapter)
     }
 }

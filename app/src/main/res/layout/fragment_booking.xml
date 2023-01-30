@@ -36,13 +36,14 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/crdContactForm"
         android:layout_width="360sp"
-        android:layout_height="510sp"
+        android:layout_height="610sp"
         android:layout_gravity="center"
         app:cardCornerRadius="15sp"
         android:layout_marginTop="300sp"
         android:layout_marginBottom="25sp"
         android:layout_marginHorizontal="25sp"
         app:cardElevation="15sp">
+
 
         <TextView
             android:id="@+id/txtContactForm"
@@ -56,6 +57,26 @@
             android:textSize="40sp"
             android:textStyle="bold"
             tools:ignore="TextContrastCheck,TextContrastCheck" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/orange_500"
+            android:layout_marginTop="90sp"
+           android:layout_marginHorizontal="25sp">
+
+            <AutoCompleteTextView
+                android:id="@+id/autoCompleteTextView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:inputType="none"
+                android:text="@string/select_service"
+                android:textColor="@color/orange_500"
+                tools:ignore="LabelFor,TextContrastCheck" />
+
+        </com.google.android.material.textfield.TextInputLayout>
 
         <EditText
             android:id="@+id/txtFullName"
@@ -113,12 +134,29 @@
             android:textColorHint="@color/orange_500"
             tools:ignore="TextContrastCheck" />
 
+        <EditText
+            android:id="@+id/idEdtDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="25sp"
+            android:layout_marginTop="430sp"
+            android:autofillHints=""
+            android:backgroundTint="@color/orange_500"
+            android:hint="@string/date"
+            android:minHeight="48dp"
+            android:textColorHint="@color/orange_500"
+            android:clickable="false"
+            android:cursorVisible="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            tools:ignore="TextContrastCheck,TextFields" />
+
         <Button
             android:id="@+id/btnSubmit"
             android:layout_width="210sp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="75sp"
-            android:layout_marginTop="440sp"
+            android:layout_marginTop="540sp"
             android:backgroundTint="@color/green_500"
             android:text="@string/submit"
             android:textColor="#ffffff"

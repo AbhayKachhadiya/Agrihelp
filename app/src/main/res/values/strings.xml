@@ -29,6 +29,8 @@
     <string name="booking_form">Booking Form</string>
     <string name="pincode">Enter Pincode</string>
     <string name="crop_name">Enter Crop Name</string>
+    <string name="date">Select Date</string>
+    <string name="select_service">Select Service</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -42,6 +44,13 @@
     <string name="mail">agrihelp@gmail.com</string>
     <string name="tall_free_number"> +91 9408482488</string>
     <string name="any_questions">You have any questions or need additional information ?</string>
+    <string name="textview">TextView</string>
 
+
+    <string-array name="services">
+        <item>Drone Sprayer</item>
+        <item>Harvester</item>
+        <item>Thresher</item>
+    </string-array>
 
 </resources>
