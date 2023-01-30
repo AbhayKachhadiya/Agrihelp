@@ -41,7 +41,7 @@
                         android:layout_width="300sp"
                         android:layout_height="180sp"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/harvester_ad"
+                        android:src="@drawable/harvester2"
                         tools:ignore="ContentDescription">
 
                     </ImageView>
@@ -83,7 +83,7 @@
                         android:layout_width="300sp"
                         android:layout_height="180sp"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/drone_sprayer_ad"
+                        android:src="@drawable/dronedisplay"
                         tools:ignore="ContentDescription">
 
                     </ImageView>
@@ -104,7 +104,7 @@
                         android:layout_width="310sp"
                         android:layout_height="190sp"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/thresher_ad"
+                        android:src="@drawable/thresher2"
                         tools:ignore="ContentDescription">
 
                     </ImageView>
