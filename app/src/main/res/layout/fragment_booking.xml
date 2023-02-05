@@ -18,9 +18,9 @@
     <!-- TODO: Update blank fragment layout -->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="230sp"
+        android:layout_height="200sp"
         app:cardCornerRadius="20sp"
-        android:layout_margin="10sp"
+        android:layout_margin="15sp"
         app:cardElevation="30sp">
 
         <com.denzcoskun.imageslider.ImageSlider
@@ -39,7 +39,7 @@
         android:layout_height="610sp"
         android:layout_gravity="center"
         app:cardCornerRadius="15sp"
-        android:layout_marginTop="300sp"
+        android:layout_marginTop="260sp"
         android:layout_marginBottom="25sp"
         android:layout_marginHorizontal="25sp"
         app:cardElevation="15sp">
@@ -163,9 +163,7 @@
             android:textSize="19sp"
             tools:ignore="TextContrastCheck" />
 
-
     </androidx.cardview.widget.CardView>
-
 
 </RelativeLayout>
 </ScrollView>

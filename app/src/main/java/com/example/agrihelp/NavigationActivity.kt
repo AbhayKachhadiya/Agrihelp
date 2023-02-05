@@ -14,6 +14,7 @@ class NavigationActivity : AppCompatActivity() {
     private lateinit var homeFragment: HomeFragment
     private lateinit var contactUsFragment: ContactUsFragment
     private lateinit var bookingFragment: BookingFragment
+    private lateinit var bookingHistoryFragment: BookingHistoryFragment
     private lateinit var sharedPref: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,6 +27,7 @@ class NavigationActivity : AppCompatActivity() {
         homeFragment = HomeFragment()
         contactUsFragment = ContactUsFragment()
         bookingFragment = BookingFragment()
+        bookingHistoryFragment = BookingHistoryFragment()
 
         showHomeFragment()
 
@@ -51,6 +53,7 @@ private fun bottomNavItemSelected(item: MenuItem): Boolean {
         R.id.navHome -> showHomeFragment()
         R.id.navContactUs -> showContactUsFragment()
         R.id.navBooking -> showBookingFragment()
+        R.id.navBookingHistory -> showBookingHistoryFragment()
         else -> return false
     }
     return true
@@ -69,10 +72,18 @@ private fun showContactUsFragment() {
         commit()
     }
 }
+
 private fun showBookingFragment() {
         supportFragmentManager.beginTransaction().apply {
             replace(R.id.fragmemtContainer, bookingFragment)
             commit()
         }
 }
+
+    private fun showBookingHistoryFragment() {
+        supportFragmentManager.beginTransaction().apply {
+            replace(R.id.fragmemtContainer, bookingHistoryFragment)
+            commit()
+        }
+    }
 }
