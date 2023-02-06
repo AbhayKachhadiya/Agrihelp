@@ -204,6 +204,5 @@
                 tools:ignore="TextContrastCheck" />
 
         </androidx.cardview.widget.CardView>
-
     </LinearLayout>
 </ScrollView>

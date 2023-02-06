@@ -29,7 +29,7 @@
             android:layout_height="match_parent"
             app:iss_auto_cycle="true"
             app:iss_period="1000"
-            app:iss_delay="0"/>
+            app:iss_delay="0" />
 
     </androidx.cardview.widget.CardView>
 

@@ -41,57 +41,30 @@ class LoginActivity : AppCompatActivity() {
             val password =  txtPassword.text.toString()
             val user = User(email = emailaddress, password = password)
 
-        CoroutineScope(Dispatchers.IO).launch {
-            val response = authService.login(user)
-            if(response.code == HttpURLConnection.HTTP_OK)
-            {
-                val loggedInUser = Gson().fromJson(response.message, User::class.java)
-                withContext(Dispatchers.Main){
-                    val spEditor = sharedprefs.edit()
-                    spEditor.putString("Email",emailaddress)
-                    spEditor.apply()
-                   navigate()
+            CoroutineScope(Dispatchers.IO).launch {
+                val response = authService.login(user)
+                if(response.code == HttpURLConnection.HTTP_OK)
+                {
+                    val loggedInUser = Gson().fromJson(response.message, User::class.java)
+                    withContext(Dispatchers.Main){
+                        val spEditor = sharedprefs.edit()
+                        spEditor.putString("Email",emailaddress)
+                        spEditor.apply()
+                        navigate()
+                    }
+                }
+                else if(response.code == HttpURLConnection.HTTP_NOT_FOUND)
+                {
+                    withContext(Dispatchers.Main){
+                        Toast.makeText(this@LoginActivity,"email or password",Toast.LENGTH_LONG).show()
+                    }
                 }
             }
-            else if(response.code == HttpURLConnection.HTTP_NOT_FOUND)
-            {
-                withContext(Dispatchers.Main){
-                    Toast.makeText(this@LoginActivity,"email or password",Toast.LENGTH_LONG).show()
-                }
-            }
-        }
 
         }
 
 
 
-//        val sharedPrefs = getSharedPreferences("agrihelp", MODE_PRIVATE)
-//        var emailaddress = sharedPrefs.getString("emailaddress", null)
-
-//        if(emailaddress != null)
-//
-//            navigate()
-
-
-
-//        btnLogin.setOnClickListener{
-//            emailaddress = txtEmailAddress.text.toString()
-//            val password = txtPassword.text.toString()
-//
-//            if( emailaddress == "abc@gmail.com" && password == "123" )
-//            {
-//                val spEditor = sharedPrefs.edit()
-//
-//                spEditor.putString("emailaddress", emailaddress)
-//                spEditor.apply()
-//
-//                navigate()
-//            }
-//            else
-//            {
-//                Toast.makeText(this, "Wrong Email_Address or Password", Toast.LENGTH_LONG).show()
-//            }
-//        }
 
         lblRegister.setOnClickListener{
             val intent = Intent(this, SignupActivity::class.java)
@@ -111,13 +84,10 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-        private fun navigate(){
-            findViewById<Button>(R.id.btnLogin).let{
-                it.setOnClickListener {
-                    val intent = Intent(this, NavigationActivity::class.java)
-                    startActivity(intent) }
-            }
-        }
+    private fun navigate(){
+                val intent = Intent(this, NavigationActivity::class.java)
+                startActivity(intent)
+    }
 
 
 }

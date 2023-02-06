@@ -1,5 +1,6 @@
 package com.example.agrihelp.services
 
+import com.example.agrihelp.models.ContactUs
 import com.example.agrihelp.models.User
 import com.example.agrihelp.utils.ApiRequest
 import com.example.agrihelp.utils.ApiResponse
@@ -14,5 +15,10 @@ class AuthService {
     fun register(user: User): ApiResponse
     {
         return ApiRequest.post(ApiRequest.USER_URL, Gson().toJson(user))
+    }
+
+    fun contactUs(contactus: ContactUs): ApiResponse
+    {
+        return ApiRequest.post(ApiRequest.CONTACTUS_URL,Gson().toJson(contactus))
     }
 }

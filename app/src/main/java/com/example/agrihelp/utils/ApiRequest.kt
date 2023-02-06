@@ -9,9 +9,10 @@ class ApiRequest
 {
     companion object
     {
-        @JvmStatic val BASE_URL = "http://192.168.43.14/Project1/api"
+        @JvmStatic val BASE_URL = "http://192.168.23.14/Project1/api"
         @JvmStatic val LOGIN_URL = "$BASE_URL/login.php"
         @JvmStatic val USER_URL = "$BASE_URL/user.php"
+        @JvmStatic val CONTACTUS_URL = "$BASE_URL/contactus.php"
 
 
         @JvmStatic
