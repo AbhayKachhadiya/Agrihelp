@@ -9,7 +9,7 @@
     <item
         android:id="@+id/navBookingHistory"
         android:icon="@drawable/ic_history"
-        android:title="@string/booking_history" />
+        android:title="Recents" />
     <item
         android:id="@+id/navBooking"
         android:icon="@drawable/ic_booking"
