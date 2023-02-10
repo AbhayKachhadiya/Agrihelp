@@ -58,7 +58,7 @@
         app:menu="@menu/bottom_nav_menu"
         app:layout_constraintBottom_toBottomOf="parent"
         app:itemRippleColor="@color/light_orange"
-        tools:layout_editor_absoluteX="42dp">
+        tools:layout_editor_absoluteX="55sp">
 
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 </RelativeLayout>

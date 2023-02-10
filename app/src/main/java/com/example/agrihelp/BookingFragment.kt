@@ -5,9 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
-import android.widget.AutoCompleteTextView
-import android.widget.EditText
+import android.widget.*
 import androidx.fragment.app.Fragment
 import com.denzcoskun.imageslider.ImageSlider
 import com.denzcoskun.imageslider.models.SlideModel
@@ -16,8 +14,12 @@ import kotlin.collections.ArrayList
 
 
 @Suppress("NAME_SHADOWING")
-class BookingFragment : Fragment() {
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+class BookingFragment : Fragment(), AdapterView.OnItemSelectedListener {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         return inflater.inflate(R.layout.fragment_booking, container, false)
     }
 
@@ -35,12 +37,10 @@ class BookingFragment : Fragment() {
         imageSlider.setImageList(imageList)
 
         showDatePicker()
-        showDropDown()
-
     }
 
-    private fun showDatePicker(){
-        dateEdt =  requireView().findViewById(R.id.idEdtDate)
+    private fun showDatePicker() {
+        dateEdt = requireView().findViewById(R.id.idEdtDate)
 
         dateEdt.setOnClickListener {
 
@@ -65,16 +65,22 @@ class BookingFragment : Fragment() {
 
             datePickerDialog.show()
         }
+
     }
 
-    private fun showDropDown(){
+    override fun onItemSelected(parent: AdapterView<*>, view: View?, pos: Int, id: Long) {
 
-        val services = resources.getStringArray(R.array.services)
+        val spinner: Spinner = requireView().findViewById(R.id.spiSelectMachinery)
 
-        val arrayAdapter = ArrayAdapter(requireContext(), R.layout.dropdown_item, services)
+        val services = arrayOf("Drone Sprayer", "Harvester", "Thresher")
 
-        val autocompleteTV = requireView().findViewById<AutoCompleteTextView>(R.id.autoCompleteTextView)
+        val arrayAdapter = ArrayAdapter(requireContext(), android.R.layout.simple_dropdown_item_1line,services)
 
-        autocompleteTV.setAdapter(arrayAdapter)
+        spinner.adapter = arrayAdapter
+        spinner.onItemSelectedListener = this
+
+        }
+    override fun onNothingSelected(parent: AdapterView<*>?) {
+
     }
 }

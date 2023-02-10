@@ -9,15 +9,16 @@
     <item
         android:id="@+id/navBookingHistory"
         android:icon="@drawable/ic_history"
-        android:title="Recents" />
+        android:title="@string/recents" />
     <item
         android:id="@+id/navBooking"
         android:icon="@drawable/ic_booking"
-        android:title="Booking"/>
+        android:title="@string/booking"/>
     <item
         android:id="@+id/navContactUs"
         android:icon="@drawable/ic_phone"
         android:title="@string/contact_us" />
+
     <item
         android:id="@+id/navProfile"
         android:icon="@drawable/ic_person"
