@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginTop="10dp"
+    android:orientation="vertical"
     android:paddingLeft="5dp"
     android:paddingRight="5dp"
     tools:context=".BookingHistoryFragment">
@@ -17,55 +16,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/booking_history"
-        android:textSize = "20sp"
+        android:textSize = "25sp"
+        android:layout_marginTop="20sp"
+        android:layout_marginHorizontal="10sp"
         android:textColor="@color/orange_500"
         android:textStyle="bold"
         android:layout_marginBottom="10sp"
         tools:ignore="TextContrastCheck">
     </TextView>
 
-    <TableRow android:background="@color/light_orange" android:padding="10dp"
-        tools:ignore="UselessParent">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textColor="@color/orange_500"
-            android:text="@string/id"
-            tools:ignore="TextContrastCheck"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textColor="@color/orange_500"
-            android:text="@string/machine"
-            tools:ignore="TextContrastCheck"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textColor="@color/orange_500"
-            android:text="@string/crop"
-            tools:ignore="TextContrastCheck"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textColor="@color/orange_500"
-            android:text="@string/selected_date"
-            tools:ignore="TextContrastCheck"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textColor="@color/orange_500"
-            android:text="@string/status"
-            tools:ignore="TextContrastCheck"/>
-
-    </TableRow>
-
-</TableLayout>
+</RelativeLayout>
