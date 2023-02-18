@@ -53,6 +53,9 @@
     <string name="tall_free_number"> +91 9408482488</string>
     <string name="any_questions">You have any questions or need additional information ?</string>
     <string name="textview">TextView</string>
+    <string name="price">Price</string>
+    <string name="purchase_date">Purchase Date</string>
+    <string name="show_details">Show Details</string>
 
 
 </resources>
