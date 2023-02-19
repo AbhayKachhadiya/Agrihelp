@@ -56,6 +56,7 @@
     <string name="price">Price</string>
     <string name="purchase_date">Purchase Date</string>
     <string name="show_details">Show Details</string>
+    <string name="pin">Pincode</string>
 
 
 </resources>
