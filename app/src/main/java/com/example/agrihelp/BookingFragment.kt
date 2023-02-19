@@ -31,7 +31,7 @@ class BookingFragment : Fragment(), AdapterView.OnItemSelectedListener {
 
         imageList.add(SlideModel(R.drawable.harvester))
         imageList.add(SlideModel(R.drawable.drone_sprayer))
-        imageList.add(SlideModel(R.drawable.thresh))
+        imageList.add(SlideModel(R.drawable.thresher1))
 
         val imageSlider = view.findViewById<ImageSlider>(R.id.image_slider)
         imageSlider.setImageList(imageList)

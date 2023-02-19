@@ -17,9 +17,9 @@
 
     <!-- TODO: Update blank fragment layout -->
     <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="200sp"
-        app:cardCornerRadius="20sp"
+        android:layout_width="360sp"
+        android:layout_height="190sp"
+        app:cardCornerRadius="15sp"
         android:layout_margin="25sp"
         app:cardElevation="30sp">
 
