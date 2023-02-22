@@ -17,9 +17,9 @@
 
     <!-- TODO: Update blank fragment layout -->
     <androidx.cardview.widget.CardView
-        android:layout_width="360sp"
-        android:layout_height="190sp"
-        app:cardCornerRadius="15sp"
+        android:layout_width="match_parent"
+        android:layout_height="200sp"
+        app:cardCornerRadius="20sp"
         android:layout_margin="25sp"
         app:cardElevation="30sp">
 
@@ -36,13 +36,17 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/crdContactForm"
         android:layout_width="360sp"
-        android:layout_height="780sp"
+        android:layout_height="850sp"
         android:layout_gravity="center"
         app:cardCornerRadius="15sp"
         android:layout_marginTop="260sp"
         android:layout_marginBottom="25sp"
         android:layout_marginHorizontal="25sp"
         app:cardElevation="15sp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
 
 
         <TextView
@@ -82,7 +86,7 @@
 
         <Spinner
             android:id="@+id/spiSelectDistrict"
-            android:layout_width="145sp"
+            android:layout_width="match_parent"
             android:layout_height="50sp"
             android:layout_marginHorizontal="25sp"
             android:layout_marginTop="225sp"
@@ -91,10 +95,10 @@
 
         <Spinner
             android:id="@+id/spiSelectTaluka"
-            android:layout_width="145sp"
+            android:layout_width="match_parent"
             android:layout_height="50sp"
             android:layout_marginHorizontal="25sp"
-            android:layout_marginTop="225sp"
+            android:layout_marginTop="295sp"
             android:textColor="@color/orange_500"
             android:layout_gravity="end"
             tools:ignore="SpeakableTextPresentCheck" />
@@ -104,7 +108,7 @@
             android:layout_width="match_parent"
             android:layout_height="50sp"
             android:layout_marginHorizontal="25sp"
-            android:layout_marginTop="295sp"
+            android:layout_marginTop="360sp"
             android:textColor="@color/orange_500"
             android:layout_gravity="end"
             tools:ignore="SpeakableTextPresentCheck" />
@@ -114,7 +118,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="25sp"
-            android:layout_marginTop="360sp"
+            android:layout_marginTop="430sp"
             android:autofillHints=""
             android:backgroundTint="@color/orange_500"
             android:hint="@string/pincode"
@@ -128,7 +132,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="25sp"
-            android:layout_marginTop="430sp"
+            android:layout_marginTop="500sp"
             android:autofillHints=""
             android:backgroundTint="@color/orange_500"
             android:hint="@string/phone_number"
@@ -142,7 +146,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="25sp"
-            android:layout_marginTop="500sp"
+            android:layout_marginTop="570sp"
             android:autofillHints=""
             android:backgroundTint="@color/orange_500"
             android:hint="@string/crop_name"
@@ -156,7 +160,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="25sp"
-            android:layout_marginTop="570sp"
+
+            android:layout_marginTop="635sp"
             android:autofillHints=""
             android:backgroundTint="@color/orange_500"
             android:hint="@string/date"
@@ -173,7 +178,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="25sp"
-            android:layout_marginTop="635sp"
+            android:layout_marginTop="705sp"
             android:autofillHints=""
             android:backgroundTint="@color/orange_500"
             android:hint="@string/hours"
@@ -186,12 +191,14 @@
             android:layout_width="210sp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="75sp"
-            android:layout_marginTop="705sp"
+            android:layout_marginTop="785sp"
             android:backgroundTint="@color/green_500"
             android:text="@string/submit"
             android:textColor="#ffffff"
             android:textSize="19sp"
             tools:ignore="TextContrastCheck" />
+
+    </RelativeLayout>
 
     </androidx.cardview.widget.CardView>
 

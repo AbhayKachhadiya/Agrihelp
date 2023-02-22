@@ -9,7 +9,7 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.agrihelp.models.ContactUs
-import com.example.agrihelp.services.AuthService
+import com.example.agrihelp.services.ContactUsService
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -18,7 +18,7 @@ import java.net.HttpURLConnection
 class ContactUsFragment : Fragment() {
 
     private lateinit var contactUs: ContactUs
-    private lateinit var authService: AuthService
+    private lateinit var contactUsService: ContactUsService
     private lateinit var txtFullName: EditText
     private lateinit var txtEmailAddress: EditText
     private lateinit var phoneNumber: EditText
@@ -52,19 +52,19 @@ class ContactUsFragment : Fragment() {
                 mobile_no = phonenumber,
                 message = message
             )
-            ContactUs()
+            contactUs()
         }
 
 
 
     }
 
-    private fun ContactUs(){
+    private fun contactUs(){
         CoroutineScope(Dispatchers.IO).launch {
-            authService = AuthService()
+            contactUsService = ContactUsService()
 
-            val Response = authService.contactUs(contactUs)
-            if(Response.code == HttpURLConnection.HTTP_CREATED){
+            val response = contactUsService.contactUs(contactUs)
+            if(response.code == HttpURLConnection.HTTP_CREATED)
                 CoroutineScope(Dispatchers.IO).launch {
                     Toast.makeText(
                         requireContext(),
@@ -73,7 +73,6 @@ class ContactUsFragment : Fragment() {
                     ).show()
 
                 }
-            }
         }
 
     }
