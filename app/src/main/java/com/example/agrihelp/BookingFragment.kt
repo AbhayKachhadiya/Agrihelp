@@ -28,20 +28,29 @@ import java.util.*
 
 
 @Suppress("NAME_SHADOWING")
-class BookingFragment : Fragment(),OnItemSelectedListener{
+class BookingFragment : Fragment(), OnItemSelectedListener {
+
+    //spinner ids
+    private var machineId: Int = 0
+    private var districtId: Int = 0
+    private var talukaId: Int = 0
+    private var villageId: Int = 0
 
     private lateinit var machineService: MachineService
     private lateinit var machines: Array<Machines>
     private var machineItems = mutableListOf("Select Machine")
     private lateinit var machinesSpinner: Spinner
+
     private lateinit var districtsService: DistrictsService
     private lateinit var districts: Array<Districts>
     private var districtItems = mutableListOf("Select District")
     private lateinit var districtsSpinner: Spinner
+
     private lateinit var talukaService: TalukasService
     private lateinit var talukas: Array<Talukas>
     private var talukaItems = mutableListOf("Select Taluka")
     private lateinit var talukasSpinner: Spinner
+
     private lateinit var villageService: VillagesService
     private lateinit var villages: Array<Villages>
     private var villageItems = mutableListOf("Select Village")
@@ -84,9 +93,15 @@ class BookingFragment : Fragment(),OnItemSelectedListener{
         showDatePicker()
         configureMachineData()
         configureDistrictData()
-        configureTalukasData()
-        configureVillagesData()
+        if(districtId == 0)
+            configureTalukasData()
+        else
+            configureTalukasDataByDistrictId()
 
+        if(talukaId == 0)
+           configureVillagesData()
+        else
+            configureVillageDataByTalukaId()
 
         showDatePicker()
     }
@@ -120,120 +135,211 @@ class BookingFragment : Fragment(),OnItemSelectedListener{
 
     }
 
-    private fun configureMachineData(){
+    private fun configureMachineData() {
         CoroutineScope(Dispatchers.IO).launch {
+
             machineService = MachineService()
             val response = machineService.getMachine()
-            if(response.code == HttpURLConnection.HTTP_OK)
-            {
+
+            if (response.code == HttpURLConnection.HTTP_OK) {
                 machines = Gson().fromJson(response.message, Array<Machines>::class.java)
-                for (machine in machines)
-                {
+                for (machine in machines) {
                     machineItems.add(machine.machine_name)
                 }
+
                 withContext(Dispatchers.Main) {
                     val adapter = ArrayAdapter(
                         requireActivity(),
-                        android.R.layout.simple_spinner_item, machineItems
+                        R.layout.spinner_list, machineItems
                     )
                     machinesSpinner.adapter = adapter
                 }
-            }
-            else if(response.code == HttpURLConnection.HTTP_NOT_FOUND)
-            {
-                withContext(Dispatchers.Main){
-                    Toast.makeText(requireContext(),"Machines not found",Toast.LENGTH_LONG).show()
+            } else if (response.code == HttpURLConnection.HTTP_NOT_FOUND) {
+                withContext(Dispatchers.Main) {
+                    Toast.makeText(requireContext(), "Machines not found", Toast.LENGTH_LONG).show()
                 }
             }
         }
     }
 
-    private fun configureDistrictData(){
+    private fun configureDistrictData() {
         CoroutineScope(Dispatchers.IO).launch {
             districtsService = DistrictsService()
             val response = districtsService.getDistricts()
-            if(response.code == HttpURLConnection.HTTP_OK)
-            {
+
+            if (response.code == HttpURLConnection.HTTP_OK) {
                 districts = Gson().fromJson(response.message, Array<Districts>::class.java)
-                for (district in districts)
-                {
+                for (district in districts) {
                     districtItems.add(district.district_name)
                 }
                 withContext(Dispatchers.Main) {
                     val adapter = ArrayAdapter(
                         requireActivity(),
-                        android.R.layout.simple_spinner_item, districtItems
+                        R.layout.spinner_list, districtItems
                     )
                     districtsSpinner.adapter = adapter
                 }
-            }
-            else if(response.code == HttpURLConnection.HTTP_NOT_FOUND)
-            {
-                withContext(Dispatchers.Main){
-                    Toast.makeText(requireContext(),"Districts not found",Toast.LENGTH_LONG).show()
+            } else if (response.code == HttpURLConnection.HTTP_NOT_FOUND) {
+                withContext(Dispatchers.Main) {
+                    Toast.makeText(requireContext(), "Districts not found", Toast.LENGTH_LONG)
+                        .show()
                 }
             }
         }
     }
-    private fun configureTalukasData(){
-        CoroutineScope(Dispatchers.IO).launch {
+
+    private fun configureTalukasData() {
+       CoroutineScope(Dispatchers.IO).launch {
+
             talukaService = TalukasService()
             val response = talukaService.getTalukas()
-            if(response.code == HttpURLConnection.HTTP_OK)
-            {
+
+            if (response.code == HttpURLConnection.HTTP_OK) {
                 talukas = Gson().fromJson(response.message, Array<Talukas>::class.java)
-                for (taluka in talukas)
-                {
-                    talukaItems.add(taluka.taluka_name)
+                for (taluka in talukas) {
+                     talukaItems.add(taluka.taluka_name)
                 }
                 withContext(Dispatchers.Main) {
                     val adapter = ArrayAdapter(
                         requireActivity(),
-                        android.R.layout.simple_spinner_item, talukaItems
+                        R.layout.spinner_list, talukaItems
                     )
                     talukasSpinner.adapter = adapter
                 }
-            }
-            else if(response.code == HttpURLConnection.HTTP_NOT_FOUND)
-            {
-                withContext(Dispatchers.Main){
-                    Toast.makeText(requireContext(),"Talukas not found",Toast.LENGTH_LONG).show()
+            } else if (response.code == HttpURLConnection.HTTP_NOT_FOUND) {
+                withContext(Dispatchers.Main) {
+                    Toast.makeText(requireContext(), "Talukas not found", Toast.LENGTH_LONG).show()
                 }
             }
         }
     }
-    private fun configureVillagesData(){
+
+    private fun configureVillagesData() {
         CoroutineScope(Dispatchers.IO).launch {
             villageService = VillagesService()
             val response = villageService.getVillages()
-            if(response.code == HttpURLConnection.HTTP_OK)
-            {
+            if (response.code == HttpURLConnection.HTTP_OK) {
                 villages = Gson().fromJson(response.message, Array<Villages>::class.java)
-                for (village in villages)
-                {
+                for (village in villages) {
                     villageItems.add(village.village_name)
                 }
                 withContext(Dispatchers.Main) {
                     val adapter = ArrayAdapter(
                         requireActivity(),
-                        android.R.layout.simple_spinner_item, villageItems
+                        R.layout.spinner_list, villageItems
                     )
                     villageSpinner.adapter = adapter
                 }
-            }
-            else if(response.code == HttpURLConnection.HTTP_NOT_FOUND)
-            {
-                withContext(Dispatchers.Main){
-                    Toast.makeText(requireContext(),"Villages not found",Toast.LENGTH_LONG).show()
+            } else if (response.code == HttpURLConnection.HTTP_NOT_FOUND) {
+                withContext(Dispatchers.Main) {
+                    Toast.makeText(requireContext(), "Villages not found", Toast.LENGTH_LONG).show()
                 }
             }
         }
     }
 
+    override fun onNothingSelected(parent: AdapterView<*>?) { }
+
     override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
+        if (parent !is Spinner)
+            return
+
+        when (parent.id) {
+            R.id.spiSelectMachinery -> { machineSelected(position) }
+            R.id.spiSelectDistrict -> { districtSelected(position) }
+            R.id.spiSelectTaluka -> { talukaSelected(position) }
+            R.id.spiSelectVillage -> { villageSelected(position) }
+        }
     }
 
-    override fun onNothingSelected(parent: AdapterView<*>?) {
+    private fun machineSelected(position: Int) {
+        if (position == 0)
+            return
+
+        val selectedMachineId = machines[position - 1].id
+        machineId = selectedMachineId
     }
 
+    private fun districtSelected(position: Int) {
+        if (position == 0)
+            return
+
+        val selectedDistrictId = districts[position - 1].id
+        districtId = selectedDistrictId
+
+
+        configureTalukasDataByDistrictId()
+    }
+
+
+    private fun talukaSelected(position: Int) {
+        if (position == 0)
+            return
+
+        val selectedTalukaId = talukas[position - 1].id
+        talukaId = selectedTalukaId
+
+        configureVillageDataByTalukaId()
+    }
+
+    private fun villageSelected(position: Int) {
+        if (position == 0)
+            return
+
+        val selectedVillageId = villages[position - 1].id
+        villageId = selectedVillageId
+    }
+    private fun configureTalukasDataByDistrictId() {
+        CoroutineScope(Dispatchers.IO).launch {
+            var talukaItemsById = mutableListOf<String>()
+            talukaService = TalukasService()
+            val response = talukaService.getTalukasById(districtId)
+
+            if (response.code == HttpURLConnection.HTTP_OK) {
+                talukas = Gson().fromJson(response.message, Array<Talukas>::class.java)
+                for (taluka in talukas) {
+                    talukaItemsById.add(taluka.taluka_name)
+                }
+                withContext(Dispatchers.Main) {
+                    val adapter = ArrayAdapter(
+                        requireActivity(),
+                        R.layout.spinner_list, talukaItemsById
+                    )
+                    talukasSpinner.adapter = adapter
+                }
+            } else if (response.code == HttpURLConnection.HTTP_NOT_FOUND) {
+                withContext(Dispatchers.Main) {
+                    Toast.makeText(requireContext(), "Talukas not found", Toast.LENGTH_LONG).show()
+                }
+            }
+        }
+
+    }
+
+    private fun configureVillageDataByTalukaId() {
+        CoroutineScope(Dispatchers.IO).launch {
+            var villageItemByTalukaId = mutableListOf<String>()
+            villageService = VillagesService()
+            val response = villageService.getVillagesById(talukaId)
+
+            if (response.code == HttpURLConnection.HTTP_OK) {
+                villages = Gson().fromJson(response.message, Array<Villages>::class.java)
+                for (village in villages) {
+                    villageItemByTalukaId.add(village.village_name)
+                }
+                withContext(Dispatchers.Main) {
+                    val adapter = ArrayAdapter(
+                        requireActivity(),
+                        R.layout.spinner_list, villageItemByTalukaId
+                    )
+                    villageSpinner.adapter = adapter
+                }
+            } else if (response.code == HttpURLConnection.HTTP_NOT_FOUND) {
+                withContext(Dispatchers.Main) {
+                    Toast.makeText(requireContext(), "Villages not found", Toast.LENGTH_LONG).show()
+                }
+            }
+        }
+
+    }
 }

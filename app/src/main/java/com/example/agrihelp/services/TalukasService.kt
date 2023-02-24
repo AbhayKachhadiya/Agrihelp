@@ -8,4 +8,8 @@ class TalukasService {
     {
         return ApiRequest.get(ApiRequest.TALUKAS_URL)
     }
+    fun getTalukasById(id: Int): ApiResponse
+    {
+        return ApiRequest.get(ApiRequest.TALUKAS_URL.plus("?districtId=$id"))
+    }
 }

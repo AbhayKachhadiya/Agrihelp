@@ -8,4 +8,9 @@ class VillagesService {
         {
             return ApiRequest.get(ApiRequest.VILLAGES_URL)
         }
+
+    fun getVillagesById(id: Int): ApiResponse
+    {
+        return ApiRequest.get(ApiRequest.VILLAGES_URL.plus("?talukaId=$id"))
+    }
 }

@@ -68,7 +68,7 @@
             android:layout_height="50sp"
             android:layout_marginHorizontal="25sp"
             android:layout_marginTop="100sp"
-            android:textColor="@color/orange_500"
+
             tools:ignore="SpeakableTextPresentCheck" />
 
         <EditText
@@ -81,6 +81,7 @@
             android:backgroundTint="@color/orange_500"
             android:hint="@string/full_name"
             android:inputType="text"
+
             android:textColorHint="@color/orange_500"
             tools:ignore="TextContrastCheck,TouchTargetSizeCheck,TouchTargetSizeCheck" />
 

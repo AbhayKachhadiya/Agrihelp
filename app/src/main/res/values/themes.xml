@@ -15,4 +15,7 @@
         <!-- Customize your theme here. -->
         <item name="android:navigationBarColor">@color/white</item>
     </style>
+    <style name="My.Spinner.Style" parent="Base.Widget.AppCompat.Spinner.Underlined">
+        <item name="android:color">@color/orange_500</item>
+    </style>
 </resources>
