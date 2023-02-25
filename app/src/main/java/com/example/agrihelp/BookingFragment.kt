@@ -14,10 +14,7 @@ import com.example.agrihelp.models.Districts
 import com.example.agrihelp.models.Machines
 import com.example.agrihelp.models.Talukas
 import com.example.agrihelp.models.Villages
-import com.example.agrihelp.services.DistrictsService
-import com.example.agrihelp.services.MachineService
-import com.example.agrihelp.services.TalukasService
-import com.example.agrihelp.services.VillagesService
+import com.example.agrihelp.services.*
 import com.google.gson.Gson
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -36,6 +33,7 @@ class BookingFragment : Fragment(), OnItemSelectedListener {
     private var talukaId: Int = 0
     private var villageId: Int = 0
 
+    //Get data into Spinner
     private lateinit var machineService: MachineService
     private lateinit var machines: Array<Machines>
     private var machineItems = mutableListOf("Select Machine")
@@ -56,6 +54,17 @@ class BookingFragment : Fragment(), OnItemSelectedListener {
     private var villageItems = mutableListOf("Select Village")
     private lateinit var villageSpinner: Spinner
 
+    //Service Booking
+    private lateinit var serviceBooking : ServiceBookingService
+    private lateinit var txtName : EditText
+    private lateinit var txtPincode : EditText
+    private lateinit var txtMobileNumber : EditText
+    private lateinit var txtCropName : EditText
+    private lateinit var txtHours : EditText
+    private lateinit var dateEdt: EditText
+    private lateinit var btnBooking : Button
+
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -64,7 +73,6 @@ class BookingFragment : Fragment(), OnItemSelectedListener {
         return inflater.inflate(R.layout.fragment_booking, container, false)
     }
 
-    private lateinit var dateEdt: EditText
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -76,6 +84,8 @@ class BookingFragment : Fragment(), OnItemSelectedListener {
         imageList.add(SlideModel(R.drawable.thresher1))
 
         val imageSlider = view.findViewById<ImageSlider>(R.id.image_slider)
+
+       //SpinnerData
         machinesSpinner = view.findViewById(R.id.spiSelectMachinery)
         machinesSpinner.onItemSelectedListener = this
 
@@ -87,6 +97,16 @@ class BookingFragment : Fragment(), OnItemSelectedListener {
 
         villageSpinner = view.findViewById(R.id.spiSelectVillage)
         villageSpinner.onItemSelectedListener = this
+
+        //BookingData
+        txtName = view.findViewById(R.id.txtFullName)
+        txtPincode = view.findViewById(R.id.txtPincode)
+        txtHours = view.findViewById(R.id.txtHours)
+        txtMobileNumber = view.findViewById(R.id.txtPhoneNumber)
+        txtCropName = view.findViewById(R.id.txtCropName)
+        dateEdt = view.findViewById(R.id.idEdtDate)
+        btnBooking = view.findViewById(R.id.btnSubmit)
+
 
         imageSlider.setImageList(imageList)
 
@@ -107,7 +127,6 @@ class BookingFragment : Fragment(), OnItemSelectedListener {
     }
 
     private fun showDatePicker() {
-        dateEdt = requireView().findViewById(R.id.idEdtDate)
 
         dateEdt.setOnClickListener {
 
@@ -121,8 +140,8 @@ class BookingFragment : Fragment(), OnItemSelectedListener {
                 requireContext(),
                 { _, _, monthOfYear, dayOfMonth ->
 
-                    val dat = (dayOfMonth.toString() + "-" + (monthOfYear + 1) + "-" + year)
-                    dateEdt.setText(dat)
+                    val date = (dayOfMonth.toString() + "-" + (monthOfYear + 1) + "-" + year)
+                    dateEdt.setText(date)
                 },
 
                 year,
@@ -291,7 +310,7 @@ class BookingFragment : Fragment(), OnItemSelectedListener {
     }
     private fun configureTalukasDataByDistrictId() {
         CoroutineScope(Dispatchers.IO).launch {
-            var talukaItemsById = mutableListOf<String>()
+            var talukaItemsById = mutableListOf("Select Taluka")
             talukaService = TalukasService()
             val response = talukaService.getTalukasById(districtId)
 
@@ -318,7 +337,7 @@ class BookingFragment : Fragment(), OnItemSelectedListener {
 
     private fun configureVillageDataByTalukaId() {
         CoroutineScope(Dispatchers.IO).launch {
-            var villageItemByTalukaId = mutableListOf<String>()
+            var villageItemByTalukaId = mutableListOf("Select Village")
             villageService = VillagesService()
             val response = villageService.getVillagesById(talukaId)
 
@@ -339,6 +358,25 @@ class BookingFragment : Fragment(), OnItemSelectedListener {
                     Toast.makeText(requireContext(), "Villages not found", Toast.LENGTH_LONG).show()
                 }
             }
+        }
+
+    }
+
+    private fun serviceBooking(){
+
+        btnBooking.setOnClickListener{
+
+            val machine = machineId.toString()
+            val name = txtName.text.toString()
+            val district = districtId.toString()
+            val taluka = talukaId.toString()
+            val village = villageId.toString()
+            val pincode = txtPincode.text.toString()
+            val mobileNumber = txtMobileNumber.text.toString()
+            val cropName = txtCropName.text.toString()
+            val selecteddate = dateEdt
+            val hours = txtHours.toString()
+
         }
 
     }
