@@ -7,22 +7,54 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
 import com.example.agrihelp.adapters.ImageAdapter
 
+@Suppress("DEPRECATION")
 class HomeFragment : Fragment() {
 
     private lateinit var viewPager2: ViewPager2
     private lateinit var handler: Handler
     private lateinit var imageList:ArrayList<Int>
     private lateinit var adapter: ImageAdapter
+    private lateinit var btnBookNowDroneSprayer: Button
+    private lateinit var btnBookNowHarvester: Button
+    private lateinit var btnBookNowThresher: Button
+
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        val view = inflater.inflate(R.layout.fragment_home, container, false)
+
+        btnBookNowDroneSprayer = view.findViewById(R.id.btnBookNowDroneSprayer)
+        btnBookNowDroneSprayer.setOnClickListener{
+
+            val fragment = BookingFragment()
+            val transaction = fragmentManager?.beginTransaction()
+            transaction?.replace(R.id.fragmemtContainer, fragment)?.commit()
+        }
+
+        btnBookNowHarvester = view.findViewById(R.id.btnBookNowHarvester)
+        btnBookNowHarvester.setOnClickListener{
+
+            val fragment = BookingFragment()
+            val transaction = fragmentManager?.beginTransaction()
+            transaction?.replace(R.id.fragmemtContainer, fragment)?.commit()
+        }
+
+        btnBookNowThresher = view.findViewById(R.id.btnBookNowThresher)
+        btnBookNowThresher.setOnClickListener{
+
+            val fragment = BookingFragment()
+            val transaction = fragmentManager?.beginTransaction()
+            transaction?.replace(R.id.fragmemtContainer, fragment)?.commit()
+        }
+        
+        return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -53,9 +85,12 @@ class HomeFragment : Fragment() {
         handler.postDelayed(runnable, 3000)
     }
 
+
+
     private  val runnable = Runnable{
         viewPager2.currentItem = viewPager2.currentItem + 1
     }
+
     private fun setUpTransformer() {
         val transformer = CompositePageTransformer()
         transformer.addTransformer(MarginPageTransformer(20))

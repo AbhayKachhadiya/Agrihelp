@@ -55,11 +55,11 @@ class BookingFragment : Fragment(), OnItemSelectedListener {
     private lateinit var villageSpinner: Spinner
 
     //Service Booking
-    private lateinit var serviceBooking : ServiceBookingService
+//    private lateinit var serviceBooking : ServiceBookingService
     private lateinit var txtName : EditText
     private lateinit var txtPincode : EditText
     private lateinit var txtMobileNumber : EditText
-    private lateinit var txtCropName : EditText
+//    private lateinit var txtCropName : EditText
     private lateinit var txtHours : EditText
     private lateinit var dateEdt: EditText
     private lateinit var btnBooking : Button
@@ -103,7 +103,6 @@ class BookingFragment : Fragment(), OnItemSelectedListener {
         txtPincode = view.findViewById(R.id.txtPincode)
         txtHours = view.findViewById(R.id.txtHours)
         txtMobileNumber = view.findViewById(R.id.txtPhoneNumber)
-        txtCropName = view.findViewById(R.id.txtCropName)
         dateEdt = view.findViewById(R.id.idEdtDate)
         btnBooking = view.findViewById(R.id.btnSubmit)
 
@@ -310,7 +309,7 @@ class BookingFragment : Fragment(), OnItemSelectedListener {
     }
     private fun configureTalukasDataByDistrictId() {
         CoroutineScope(Dispatchers.IO).launch {
-            var talukaItemsById = mutableListOf("Select Taluka")
+            val talukaItemsById = mutableListOf("Select Taluka")
             talukaService = TalukasService()
             val response = talukaService.getTalukasById(districtId)
 
@@ -337,7 +336,7 @@ class BookingFragment : Fragment(), OnItemSelectedListener {
 
     private fun configureVillageDataByTalukaId() {
         CoroutineScope(Dispatchers.IO).launch {
-            var villageItemByTalukaId = mutableListOf("Select Village")
+            val villageItemByTalukaId = mutableListOf("Select Village")
             villageService = VillagesService()
             val response = villageService.getVillagesById(talukaId)
 
@@ -362,22 +361,19 @@ class BookingFragment : Fragment(), OnItemSelectedListener {
 
     }
 
-    private fun serviceBooking(){
+//    private fun serviceBooking(){
 
-        btnBooking.setOnClickListener{
-
-            val machine = machineId.toString()
-            val name = txtName.text.toString()
-            val district = districtId.toString()
-            val taluka = talukaId.toString()
-            val village = villageId.toString()
-            val pincode = txtPincode.text.toString()
-            val mobileNumber = txtMobileNumber.text.toString()
-            val cropName = txtCropName.text.toString()
-            val selecteddate = dateEdt
-            val hours = txtHours.toString()
+//        btnBooking.setOnClickListener{
+//
+//            val machine = machineId.toString()
+//            val name = txtName.text.toString()
+//            val district = districtId.toString()
+//            val taluka = talukaId.toString()
+//            val village = villageId.toString()
+//            val pincode = txtPincode.text.toString()
+//            val mobileNumber = txtMobileNumber.text.toString()
+//            val cropName = txtCropName.text.toString()
+//            val selecteddate = dateEdt
+//            val hours = txtHours.toString()
 
         }
-
-    }
-}
