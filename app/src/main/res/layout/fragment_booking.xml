@@ -17,7 +17,7 @@
 
     <!-- TODO: Update blank fragment layout -->
     <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
+        android:layout_width="355sp"
         android:layout_height="200sp"
         app:cardCornerRadius="20sp"
         android:layout_margin="25sp"
@@ -25,10 +25,10 @@
 
         <com.denzcoskun.imageslider.ImageSlider
             android:id="@+id/image_slider"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_width="355sp"
+            android:layout_height="wrap_content"
             app:iss_auto_cycle="true"
-            app:iss_period="1000"
+            app:iss_period="2000"
             app:iss_delay="0" />
 
     </androidx.cardview.widget.CardView>
@@ -66,6 +66,8 @@
             android:id="@+id/spiSelectMachinery"
             android:layout_width="match_parent"
             android:layout_height="50sp"
+            style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+            android:backgroundTint="@color/orange_500"
             android:layout_marginHorizontal="25sp"
             android:layout_marginTop="100sp"
             tools:ignore="SpeakableTextPresentCheck" />
@@ -90,6 +92,8 @@
             android:layout_height="50sp"
             android:layout_marginHorizontal="25sp"
             android:layout_marginTop="225sp"
+            style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+            android:backgroundTint="@color/orange_500"
             android:textColor="@color/orange_500"
             tools:ignore="SpeakableTextPresentCheck" />
 
@@ -99,6 +103,8 @@
             android:layout_height="50sp"
             android:layout_marginHorizontal="25sp"
             android:layout_marginTop="295sp"
+            android:backgroundTint="@color/orange_500"
+            style="@style/Base.Widget.AppCompat.Spinner.Underlined"
             android:textColor="@color/orange_500"
             android:layout_gravity="end"
             tools:ignore="SpeakableTextPresentCheck" />
@@ -109,6 +115,8 @@
             android:layout_height="50sp"
             android:layout_marginHorizontal="25sp"
             android:layout_marginTop="360sp"
+            style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+            android:backgroundTint="@color/orange_500"
             android:textColor="@color/orange_500"
             android:layout_gravity="end"
             tools:ignore="SpeakableTextPresentCheck" />

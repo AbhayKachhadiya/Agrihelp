@@ -57,7 +57,7 @@
                     android:layout_width="370sp"
                     android:layout_height="150dp"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/drone_sprayer"
+                    android:src="@drawable/drone_sprayer1"
                     tools:ignore="ContentDescription,ImageContrastCheck,ImageContrastCheck" />
 
                 <TextView
