@@ -2,6 +2,7 @@
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/profileContainer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/orange_500"
@@ -61,13 +62,13 @@
         android:background="@color/light_gray" />
 
     <TextView
-        android:id="@+id/txtSupport"
+        android:id="@+id/txtBookingHistory"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="30sp"
         android:layout_marginTop="380sp"
         android:drawableEnd="@drawable/ic_arrow_forward"
-        android:text="@string/support"
+        android:text="@string/booking_history"
         android:textColor="@color/white"
         android:textSize="20sp"
         tools:ignore="TextContrastCheck,UseCompatTextViewDrawableXml" />
@@ -80,13 +81,13 @@
         android:background="@color/light_gray" />
 
     <TextView
-        android:id="@+id/txtPrivacyPolicy"
+        android:id="@+id/txtSupport"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="30sp"
         android:layout_marginTop="450sp"
         android:drawableEnd="@drawable/ic_arrow_forward"
-        android:text="@string/privacy_policy"
+        android:text="@string/support"
         android:textColor="@color/white"
         android:textSize="20sp"
         tools:ignore="TextContrastCheck,UseCompatTextViewDrawableXml" />
@@ -99,24 +100,14 @@
         android:background="@color/light_gray" />
 
     <TextView
-        android:id="@+id/txtTermsAndConditions"
+        android:id="@+id/txtAboutAgrihelp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="30sp"
         android:layout_marginTop="515sp"
+        android:layout_marginBottom="30sp"
         android:drawableEnd="@drawable/ic_arrow_forward"
-        android:text="@string/terms_and_conditions"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        tools:ignore="TextContrastCheck,UseCompatTextViewDrawableXml" />
-
-    <TextView
-        android:id="@+id/txtAppVersion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="610sp"
-        android:text="@string/version"
+        android:text="@string/about_agrihelp"
         android:textColor="@color/white"
         android:textSize="20sp"
         tools:ignore="TextContrastCheck,UseCompatTextViewDrawableXml" />

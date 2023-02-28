@@ -48,10 +48,13 @@
     <string name="person_email">dholariyaalpesh@gmail.com</string>
     <string name="edit_profile">Edit Profile</string>
     <string name="my_account">My Account</string>
-    <string name="feedback">Feedback</string>
     <string name="about_agrihelp">About Agrihelp</string>
     <string name="support">24/7 Support</string>
     <string name="version">Version 1.0</string>
+    <string name="book_it_online">Book It Online</string>
+    <string name="grow_with_us">Grow With Us</string>
+    <string name="next">Next</string>
+    <string name="get_started">Get Started</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -67,7 +70,8 @@
     <string name="any_questions">You have any questions or need additional information ?</string>
     <string name="agrihelp">Agrihelp</string>
     <string name="platforms">Published by Agrihelp Platforms Ltd.</string>
-    <string name="privacy_policy">Privacy Policy</string>
-    <string name="terms_and_conditions"><![CDATA[Terms & Conditions]]></string>
-
+    <string name="about">Our company is a online booking system that is here to help farmers by giving service 24/7. Here Farmers can book Machinery on Rent. There are 3 services Drone Sprayer, Harvester and Thresher.</string>
+    <string name="online_machinery">Book your machinery at rental price on rent for as many hours you want.</string>
+    <string name="customer_support">If any query arise regarding anything related to us just contact us you get 24/7 support.</string>
+    <string name="grow">Boost your yields by using our machinery and make your efforts to the market.</string>
 </resources>
