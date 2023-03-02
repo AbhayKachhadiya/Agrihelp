@@ -21,7 +21,7 @@
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/vpMachine"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginVertical="20sp"/>
 
         <androidx.cardview.widget.CardView
@@ -57,7 +57,7 @@
                     android:layout_width="370sp"
                     android:layout_height="150dp"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/drone_sprayer"
+                    android:src="@drawable/drone_sprayer1"
                     tools:ignore="ContentDescription,ImageContrastCheck,ImageContrastCheck" />
 
                 <TextView

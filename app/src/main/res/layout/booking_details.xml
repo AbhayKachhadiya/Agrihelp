@@ -10,6 +10,15 @@
     android:paddingRight="5dp"
     tools:context=".BookingHistoryFragment">
 
+    <ImageView
+        android:layout_width="50sp"
+        android:layout_height="50sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10sp"
+        android:elevation="50sp"
+        android:src="@drawable/ic_leaf"
+        tools:ignore="ContentDescription" />
+
     <androidx.cardview.widget.CardView
         android:id="@+id/crdDetails"
         android:layout_width="320sp"
@@ -20,7 +29,6 @@
         android:elevation="0sp"
         app:cardCornerRadius="10sp"
         app:cardElevation="10sp">
-
 
         <TextView
             android:id="@+id/txtServiceName"
