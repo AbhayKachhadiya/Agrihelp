@@ -17,6 +17,7 @@ class ApiRequest
         @JvmStatic val DISTRICTS_URL = "$BASE_URL/district.php"
         @JvmStatic val TALUKAS_URL = "$BASE_URL/taluka.php"
         @JvmStatic val VILLAGES_URL = "$BASE_URL/village.php"
+        @JvmStatic val OPERATORS_URL = "$BASE_URL/operator.php"
         @JvmStatic val BOOKING_URL = "$BASE_URL/servicebooking.php"
 
 

@@ -6,16 +6,20 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.agrihelp.R
+import com.example.agrihelp.models.BookingDetail
 
-class ItemsAdapter(private val items: Array<String>) : RecyclerView.Adapter<ItemsAdapter.ViewHolder>()
+class ItemsAdapter(
+    private var bookings: ArrayList<BookingDetail>,
+) : RecyclerView.Adapter<ItemsAdapter.ViewHolder>()
 {
+
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view)
     {
         val txtServiceName: TextView = view.findViewById(R.id.txtServiceName)
         val txtDate: TextView = view.findViewById(R.id.txtDate)
-        val txtRentalPrice: TextView = view.findViewById(R.id.txtRentalPrice)
         val txtCropName: TextView = view.findViewById(R.id.txtCropName)
         val txtStatus: TextView = view.findViewById(R.id.txtStatus)
+        val txthours: TextView = view.findViewById(R.id.txtHours)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder
@@ -26,12 +30,13 @@ class ItemsAdapter(private val items: Array<String>) : RecyclerView.Adapter<Item
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int)
     {
-        holder.txtServiceName.text = items[position]
-        holder.txtDate.text = items[position]
-        holder.txtRentalPrice.text = items[position]
-        holder.txtCropName.text = items[position]
-        holder.txtStatus.text = items[position]
+        bookings[position]
+//        holder.txtServiceName.text = bookings[position]
+//        holder.txtDate.text = bookings[position]
+//        holder.txtCropName.text = bookings[position]
+//        holder.txtStatus.text = bookings[position]
+//        holder.txthours.text = bookings[position]
     }
 
-    override fun getItemCount(): Int = items.size
+    override fun getItemCount(): Int = bookings.size
 }

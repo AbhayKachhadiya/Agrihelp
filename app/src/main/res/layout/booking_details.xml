@@ -35,16 +35,29 @@
             tools:ignore="TextViewEdits,TouchTargetSizeCheck,TextSizeCheck,TextContrastCheck" />
 
         <TextView
-            android:id="@+id/txtRentalPrice"
+            android:id="@+id/txtActualHours"
             android:layout_width="wrap_content"
             android:layout_height="20sp"
             android:layout_gravity="end"
-            android:layout_marginHorizontal="15sp"
+            android:layout_marginHorizontal="40sp"
             android:layout_marginTop="30sp"
-            android:text="@string/price"
+            android:text="@string/ActualHours"
             android:textColor="@color/orange_500"
             android:textSize="17sp"
             tools:ignore="TextSizeCheck,TextContrastCheck" />
+
+        <TextView
+            android:id="@+id/txtHours"
+            android:layout_width="wrap_content"
+            android:layout_height="20sp"
+            android:layout_gravity="end"
+            android:layout_marginHorizontal="20sp"
+            android:layout_marginTop="30sp"
+            android:text="0"
+            android:textColor="@color/orange_500"
+            android:textSize="17sp"
+            tools:ignore="TextSizeCheck,TextContrastCheck" />
+
 
         <TextView
             android:id="@+id/txtDate"
@@ -69,26 +82,13 @@
         <TextView
             android:id="@+id/txtCropName"
             android:layout_width="wrap_content"
-            android:layout_height="20sp"
+            android:layout_height="25sp"
             android:layout_marginHorizontal="15sp"
-            android:layout_marginTop="160sp"
+            android:layout_marginTop="145sp"
             android:inputType="text"
             android:text="@string/crop"
             android:textColor="@color/orange_500"
-            android:textSize="17sp"
-            tools:ignore="TextViewEdits,TouchTargetSizeCheck,TextSizeCheck,TextContrastCheck" />
-
-
-        <TextView
-            android:id="@+id/txtPincode"
-            android:layout_width="wrap_content"
-            android:layout_height="20sp"
-            android:layout_marginHorizontal="15sp"
-            android:layout_marginTop="125sp"
-            android:inputType="text"
-            android:text="@string/pin"
-            android:textColor="@color/orange_500"
-            android:textSize="17sp"
+            android:textSize="20sp"
             tools:ignore="TextViewEdits,TouchTargetSizeCheck,TextSizeCheck,TextContrastCheck" />
 
 

@@ -49,6 +49,7 @@ class LoginActivity : AppCompatActivity() {
                     withContext(Dispatchers.Main){
                         val spEditor = sharedprefs.edit()
                         spEditor.putString("Email",emailaddress)
+                        spEditor.putInt("id",loggedInUser.id)
                         spEditor.apply()
                         navigate()
                     }
@@ -56,7 +57,7 @@ class LoginActivity : AppCompatActivity() {
                 else if(response.code == HttpURLConnection.HTTP_NOT_FOUND)
                 {
                     withContext(Dispatchers.Main){
-                        Toast.makeText(this@LoginActivity,"email or password",Toast.LENGTH_LONG).show()
+                        Toast.makeText(this@LoginActivity,"Wrong email or password",Toast.LENGTH_LONG).show()
                     }
                 }
             }
