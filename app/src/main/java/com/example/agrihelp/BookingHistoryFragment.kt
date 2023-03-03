@@ -75,7 +75,7 @@ class BookingHistoryFragment : Fragment() {
                         bookingList
                     )
 
-                    bookingRecyclerView.layoutManager = GridLayoutManager(attachedContext,1)
+                    bookingRecyclerView.layoutManager = GridLayoutManager(requireContext(),1)
                     bookingRecyclerView.adapter = bookingAdapter
                 }
             }

@@ -57,6 +57,7 @@ class BookingFragment : Fragment(), OnItemSelectedListener {
 
     private lateinit var operatorService: OperatorService
     private lateinit var operators: Array<Operators>
+    private var operatorItems = mutableListOf("Select Operator")
     private lateinit var operatorSpinner: Spinner
 
     //Service Booking

@@ -53,7 +53,7 @@
             android:id="@+id/txtContactForm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
+            android:layout_centerHorizontal="true"
             android:layout_marginVertical="20sp"
             android:gravity="center"
             android:text="@string/booking_form"
@@ -68,7 +68,6 @@
             android:layout_height="50sp"
             android:layout_marginHorizontal="25sp"
             android:layout_marginTop="100sp"
-
             tools:ignore="SpeakableTextPresentCheck" />
 
         <EditText

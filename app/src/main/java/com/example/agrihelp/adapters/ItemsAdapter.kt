@@ -30,12 +30,11 @@ class ItemsAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int)
     {
-        bookings[position]
-//        holder.txtServiceName.text = bookings[position]
-//        holder.txtDate.text = bookings[position]
-//        holder.txtCropName.text = bookings[position]
-//        holder.txtStatus.text = bookings[position]
-//        holder.txthours.text = bookings[position]
+        holder.txtServiceName.text = bookings[position].service_name
+        holder.txtDate.text = bookings[position].bookingDate
+        holder.txtCropName.text = bookings[position].cropName
+        holder.txtStatus.text = bookings[position].status
+        holder.txthours.text = bookings[position].actualHours.toString()
     }
 
     override fun getItemCount(): Int = bookings.size

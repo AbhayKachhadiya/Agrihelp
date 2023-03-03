@@ -103,7 +103,7 @@
         <TextView
             android:id="@+id/txtStatus"
             android:layout_width="wrap_content"
-            android:layout_height="20sp"
+            android:layout_height="25sp"
             android:layout_gravity="end"
             android:layout_marginHorizontal="20sp"
             android:layout_marginTop="145sp"

@@ -6,5 +6,5 @@ data class BookingDetail(
     val actualHours:Int = 0,
     val bookingDate:String = "",
     val cropName:String = "",
-    val status:Int = 0
+    val status: String = ""
 )
