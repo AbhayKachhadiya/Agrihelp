@@ -7,7 +7,7 @@ import com.google.gson.Gson
 
 class ServiceBookingService {
 
-    fun serviceBooking(serviceBooking : ServiceBooking): ApiResponse{
+    fun serviceBooking(serviceBooking: ServiceBooking): ApiResponse{
         return ApiRequest.post(ApiRequest.BOOKING_URL,Gson().toJson(serviceBooking))
     }
 

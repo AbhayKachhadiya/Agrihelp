@@ -57,6 +57,13 @@
     <string name="purchase_date">Purchase Date</string>
     <string name="show_details">Show Details</string>
     <string name="pin">Pincode</string>
+    <string name="get_started">Get Started</string>
+    <string name="platforms">Platforms</string>
+    <string name="about">About Us</string>
+    <string name="version">Version 1.0</string>
+    <string name="about_agrihelp">About Agrihelp</string>
+    <string name="person_email">abc@gmail.com</string>
+    <string name="support">27/7 Support</string>
 
     <string-array name="planets_array">
         <item>Mercury</item>

@@ -20,16 +20,6 @@
         android:src="@drawable/profile"
         tools:ignore="ContentDescription,ImageContrastCheck" />
 
-    <TextView
-        android:id="@+id/txtName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="150sp"
-        android:text="@string/person_name"
-        android:textColor="@color/white"
-        android:textSize="30sp"
-        tools:ignore="TextContrastCheck" />
 
     <TextView
         android:id="@+id/txtEmail"
@@ -41,18 +31,6 @@
         android:textColor="@color/white"
         android:textSize="25sp"
         tools:ignore="TextContrastCheck" />
-
-    <TextView
-        android:id="@+id/txtMyAccount"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="30sp"
-        android:layout_marginTop="315sp"
-        android:drawableEnd="@drawable/ic_arrow_forward"
-        android:text="@string/my_account"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        tools:ignore="TextContrastCheck,UseCompatTextViewDrawableXml" />
 
     <View
         android:layout_width="match_parent"
