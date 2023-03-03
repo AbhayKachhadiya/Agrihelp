@@ -93,8 +93,7 @@ class BookingFragment : Fragment(), OnItemSelectedListener {
         val imageList = ArrayList<SlideModel>() // Create image list
 
         imageList.add(SlideModel(R.drawable.harvester))
-        imageList.add(SlideModel(R.drawable.drone_sprayer))
-        imageList.add(SlideModel(R.drawable.thresher1))
+        imageList.add(SlideModel(R.drawable.drone_sprayer1))
 
         val imageSlider = view.findViewById<ImageSlider>(R.id.image_slider)
 
